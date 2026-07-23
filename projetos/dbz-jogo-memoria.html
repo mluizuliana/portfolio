@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case de portfolio: jogo da memoria inspirado em Dragon Ball Z, com login, cronometro, cartas embaralhadas, JavaScript e layout responsivo.">
+  <meta name="theme-color" content="#fafaf9">
+  <title>Estudo: Jogo da Mem&oacute;ria DBZ | Meigan Luiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icon_favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../icon_favicon/meigan-dev-icon-1024.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container" aria-label="Navegacao principal">
+      <a class="brand" href="../index.html">DEV. Meigan Luiz Uliana</a>
+      <div class="nav-links" id="main-menu">
+        <a href="../index.html">In&iacute;cio</a>
+        <a href="../sobre.html">Sobre</a>
+        <a href="../portfolio.html">Portf&oacute;lio</a>
+        <a class="mobile-only" href="../index.html#contact">Contato</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" title="Alternar tema claro/escuro">
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+          <span class="theme-option theme-option-sun" aria-hidden="true">&#9728;</span>
+          <span class="theme-option theme-option-moon" aria-hidden="true">&#9790;</span>
+        </button>
+        <a href="../index.html#contact" class="pill dark contact-link">Contato</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-page-hero project-case-hero">
+      <div class="container">
+        <nav class="project-breadcrumb" aria-label="Caminho do projeto">
+          <a href="../index.html">Home</a>
+          <span>&middot;</span>
+          <a href="../portfolio.html">Portf&oacute;lio</a>
+          <span>&middot;</span>
+          <span>Projeto</span>
+        </nav>
+        <span class="eyebrow">Jogo da mem&oacute;ria em JavaScript</span>
+        <h1 class="serif">Estudo: Jogo da Mem&oacute;ria DBZ</h1>
+        <p class="lead">
+          Projeto em HTML, CSS e JavaScript com fluxo de login, nome do jogador salvo no navegador, cron&ocirc;metro, cartas embaralhadas, pares revelados e tabuleiro responsivo inspirado em Dragon Ball Z.
+        </p>
+        <div class="project-meta-row">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Game</span>
+          <span>Responsivo</span>
+        </div>
+        <div class="project-live-actions">
+          <a class="pill dark project-live-link" href="../demos/dbz-jogo-memoria/index.html" target="_blank" rel="noopener noreferrer">Abrir demonstra&ccedil;&atilde;o</a>
+          <a class="pill" href="../portfolio.html">Ver mais projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white project-cover-section">
+      <div class="container">
+        <figure class="project-cover project-cover--fill">
+          <img src="../assets/dbz-desktop.jpg" alt="Capa desktop do jogo da memoria Dragon Ball Z">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container project-overview">
+        <div class="project-overview-copy">
+          <span class="section-label">Sobre o projeto</span>
+          <h2 class="section-title serif">Um jogo simples, visual e funcional para praticar l&oacute;gica, estado e intera&ccedil;&atilde;o no navegador.</h2>
+          <p class="section-copy">
+            O projeto trabalha com duas etapas: uma tela de entrada para identificar o jogador e um tabuleiro de cartas embaralhadas. A l&oacute;gica controla pares encontrados, cartas abertas, cron&ocirc;metro e feedback visual de progresso.
+          </p>
+        </div>
+
+        <aside class="project-details-card">
+          <h3>Ficha do projeto</h3>
+          <dl class="project-details-list">
+            <div>
+              <dt>Demonstra&ccedil;&atilde;o naveg&aacute;vel</dt>
+              <dd><a href="../demos/dbz-jogo-memoria/index.html" target="_blank" rel="noopener noreferrer">Abrir vers&atilde;o est&aacute;tica</a></dd>
+            </div>
+            <div>
+              <dt>Tecnologias</dt>
+              <dd>HTML, CSS, JavaScript, localStorage, DOM, temporizador, eventos de clique, array shuffle, controle de estado, imagens de cartas e layout responsivo.</dd>
+            </div>
+            <div>
+              <dt>Contexto</dt>
+              <dd>Projeto de estudo para praticar fundamentos de JavaScript por meio de um jogo naveg&aacute;vel, com foco em l&oacute;gica e experi&ecirc;ncia visual.</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section white project-section-breakdown">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Jogo se&ccedil;&atilde;o por se&ccedil;&atilde;o</span>
+          <h2 class="section-title serif">O case registra a jornada completa do jogador.</h2>
+          <p class="section-copy">A apresenta&ccedil;&atilde;o mostra a entrada, o tabuleiro, a revela&ccedil;&atilde;o das cartas e a leitura em tela menor.</p>
+        </div>
+
+        <div class="site-section-list">
+          <article class="site-section-card">
+            <figure class="site-section-media site-section-media--contain">
+              <img src="../assets/dbz-section-login.jpg" alt="Tela de login do jogo da memoria Dragon Ball Z" loading="lazy">
+            </figure>
+            <div class="site-section-content">
+              <div class="site-section-heading">
+                <span class="case-kicker">Login</span>
+                <div>
+                  <span class="site-section-number">01</span>
+                  <h3 class="serif">Entrada com nome do jogador antes de abrir o tabuleiro.</h3>
+                </div>
+              </div>
+              <p>A primeira tela pede o nome, habilita a entrada no jogo e prepara a experi&ecirc;ncia para exibir o jogador no cabe&ccedil;alho do tabuleiro.</p>
+              <div class="site-section-tags">
+                <span>Login</span>
+                <span>Valida&ccedil;&atilde;o</span>
+                <span>Fluxo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="site-section-card reverse">
+            <figure class="site-section-media site-section-media--contain">
+              <img src="../assets/dbz-section-tabuleiro.jpg" alt="Tabuleiro do jogo da memoria Dragon Ball Z" loading="lazy">
+            </figure>
+            <div class="site-section-content">
+              <div class="site-section-heading">
+                <span class="case-kicker">Tabuleiro</span>
+                <div>
+                  <span class="site-section-number">02</span>
+                  <h3 class="serif">Grade de cartas embaralhadas com jogador e cron&ocirc;metro vis&iacute;veis.</h3>
+                </div>
+              </div>
+              <p>A tela principal concentra o jogo: nome do jogador, tempo em andamento e cartas distribu&iacute;das para iniciar a procura pelos pares.</p>
+              <div class="site-section-tags">
+                <span>Cartas</span>
+                <span>Cron&ocirc;metro</span>
+                <span>Estado</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="site-section-card">
+            <figure class="site-section-media site-section-media--contain">
+              <img src="../assets/dbz-section-cartas-reveladas.jpg" alt="Cartas reveladas no jogo da memoria Dragon Ball Z" loading="lazy">
+            </figure>
+            <div class="site-section-content">
+              <div class="site-section-heading">
+                <span class="case-kicker">Pares</span>
+                <div>
+                  <span class="site-section-number">03</span>
+                  <h3 class="serif">Cartas reveladas mostram o feedback visual da l&oacute;gica do jogo.</h3>
+                </div>
+              </div>
+              <p>Quando o jogador encontra pares, as cartas reveladas permanecem no tabuleiro, tornando o progresso claro sem precisar de instru&ccedil;&otilde;es extras.</p>
+              <div class="site-section-tags">
+                <span>Pares</span>
+                <span>Feedback</span>
+                <span>Mem&oacute;ria</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="site-section-card reverse">
+            <figure class="site-section-media site-section-media--contain">
+              <img src="../assets/dbz-section-mobile.jpg" alt="Versao mobile do jogo da memoria Dragon Ball Z" loading="lazy">
+            </figure>
+            <div class="site-section-content">
+              <div class="site-section-heading">
+                <span class="case-kicker">Mobile</span>
+                <div>
+                  <span class="site-section-number">04</span>
+                  <h3 class="serif">O tabuleiro se adapta para manter o jogo leg&iacute;vel no celular.</h3>
+                </div>
+              </div>
+              <p>A vers&atilde;o mobile reorganiza a grade e preserva informa&ccedil;&otilde;es essenciais, mantendo o jogo us&aacute;vel em telas menores.</p>
+              <div class="site-section-tags">
+                <span>Responsivo</span>
+                <span>Mobile</span>
+                <span>Usabilidade</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-notes-section">
+      <div class="container">
+        <h2 class="project-section-title serif">Notas do case</h2>
+        <div class="project-story-grid">
+          <article class="story-card">
+            <h3>Problema</h3>
+            <p>Transformar um exerc&iacute;cio de JavaScript em uma experi&ecirc;ncia completa, com entrada de jogador, regras simples, estado visual e tabuleiro responsivo.</p>
+          </article>
+          <article class="story-card">
+            <h3>Solu&ccedil;&atilde;o</h3>
+            <p>Fluxo com login, armazenamento do nome, cards embaralhados, valida&ccedil;&atilde;o de pares, travamento de cartas j&aacute; encontradas, cron&ocirc;metro e feedback visual.</p>
+          </article>
+          <article class="story-card">
+            <h3>Resultado</h3>
+            <p>Um jogo naveg&aacute;vel documentado no portf&oacute;lio, demonstrando l&oacute;gica de programa&ccedil;&atilde;o, manipula&ccedil;&atilde;o do DOM, intera&ccedil;&atilde;o e cuidado responsivo.</p>
+          </article>
+        </div>
+
+        <div class="project-closing">
+          <div>
+            <h2 class="serif">Projeto de jogo registrado como estudo pr&aacute;tico.</h2>
+            <p>A demonstra&ccedil;&atilde;o fica preservada dentro do portf&oacute;lio para mostrar n&atilde;o apenas layout, mas tamb&eacute;m l&oacute;gica funcionando no navegador.</p>
+          </div>
+          <div class="next-projects">
+            <a class="pill" href="../portfolio.html">Ver portf&oacute;lio</a>
+            <a class="pill dark" href="../demos/dbz-jogo-memoria/index.html" target="_blank" rel="noopener noreferrer">Abrir demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">MEIGAN.DEV</div>
+    <p>&copy; 2026 Meigan Luiz Uliana &bull; Desenvolvedor Web</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

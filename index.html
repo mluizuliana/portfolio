@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio pessoal de Meigan Luiz, web developer na Cocorico.live.">
+  <meta name="theme-color" content="#fafaf9">
+  <title>Meigan Luiz | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon_favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="icon_favicon/meigan-dev-icon-1024.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container" aria-label="Navegacao principal">
+      <a class="brand" href="index.html" aria-label="Voltar ao inicio">
+        <span class="brand-full">DEV. Meigan Luiz Uliana</span>
+        <span class="brand-short">MEIGAN.DEV</span>
+      </a>
+
+      <div class="nav-links" id="main-menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a class="mobile-only" href="#contact">Contato</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" title="Alternar tema claro/escuro">
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+          <span class="theme-option theme-option-sun" aria-hidden="true">&#9728;</span>
+          <span class="theme-option theme-option-moon" aria-hidden="true">&#9790;</span>
+        </button>
+        <a href="#contact" class="pill dark contact-link">Contato</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Portfólio pessoal</span>
+        <p class="hello">OLÁ, EU SOU</p>
+        <h1 class="serif">
+          <span>MEIGAN</span>
+          <span>LUIZ</span>
+        </h1>
+        <p class="role">PROGRAMADOR</p>
+        <p class="lead">
+          Seja bem-vindo(a)! Este é um espaço para organizar e apresentar minha evolução no mundo da tecnologia. Atuo profissionalmente na Cocoricó Agência</a> e utilizo este portfólio como um acervo pessoal dos sites, estudos e entregas que fazem parte da minha trajetória.
+        </p>
+        <div class="actions">
+          <a class="pill dark" href="#projects">Ver projetos</a>
+          <a class="pill" href="https://www.cocorico.live/" target="_blank" rel="noreferrer">Cocorico.live</a>
+        </div>
+
+        <div class="hero-media" aria-label="Previa visual do portfolio">
+          <div class="desktop-preview">
+            <div class="preview-nav">
+              <span>Sites</span>
+              <span>Lojas</span>
+              <span>Estudos</span>
+            </div>
+            <div class="preview-hero">
+              <span>Acervo pessoal</span>
+              <strong>12 projetos documentados</strong>
+              <p>WordPress, Loja Integrada, Tray, CSS, JS, SEO e IA organizados em cases.</p>
+            </div>
+            <div class="preview-grid">
+              <article>
+                <img src="assets/jussara-section-inicio.jpg" alt="" aria-hidden="true" loading="lazy">
+                <small>01</small>
+                <b>Dra. Jussara Ulian</b>
+                <em>Site publicado</em>
+              </article>
+              <article>
+                <img src="assets/craft-decor-section-inicio.jpg" alt="" aria-hidden="true" loading="lazy">
+                <small>04</small>
+                <b>Craft Decor</b>
+                <em>Loja virtual</em>
+              </article>
+              <article>
+                <img src="assets/dbz-section-cartas-reveladas.jpg" alt="" aria-hidden="true" loading="lazy">
+                <small>12</small>
+                <b>Estudo: DBZ</b>
+                <em>JavaScript</em>
+              </article>
+            </div>
+          </div>
+          <div class="mobile-preview">
+            <span>Registro novo</span>
+            <img class="mobile-preview-shot" src="assets/league-section-selecao-akali.jpg" alt="" aria-hidden="true" loading="lazy">
+            <strong>Estudo: League of Legends</strong>
+            <p>Interface interativa em JavaScript.</p>
+            <p>Demo local no portf&oacute;lio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-services" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Acervo em destaque</span>
+          <h2 class="section-title serif">Projetos publicados e estudos selecionados</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <a class="service-image service-image--project" href="projetos/jussara-ulian.html" aria-label="Abrir projeto Dra. Jussara Ulian">
+              <img src="assets/jussara-section-inicio.jpg" alt="Capa desktop do projeto Dra. Jussara Ulian">
+            </a>
+            <div class="service-title">
+              <span class="icon">01</span>
+              <h3 class="serif"><a href="projetos/jussara-ulian.html">Dra. Jussara Ulian</a></h3>
+            </div>
+            <p>Site publicado para apresentar especialidades odontol&oacute;gicas, tecnologia iTero, Invisalign e contato local.</p>
+          </article>
+
+          <article class="service-card">
+            <a class="service-image service-image--project" href="projetos/esquadrias-ju.html" aria-label="Abrir projeto Esquadrias JU">
+              <img src="assets/esquadrias-section-inicio.jpg" alt="Capa desktop do projeto Esquadrias JU">
+            </a>
+            <div class="service-title">
+              <span class="icon">02</span>
+              <h3 class="serif"><a href="projetos/esquadrias-ju.html">Esquadrias JU</a></h3>
+            </div>
+            <p>Site publicado para organizar esquadrias em madeira, PVC, decks, pergolados, galeria e or&ccedil;amento.</p>
+          </article>
+
+          <article class="service-card">
+            <a class="service-image service-image--project" href="projetos/silva-farias-advogados.html" aria-label="Abrir projeto Silva Farias Advogados">
+              <img src="assets/silva-section-inicio.jpg" alt="Capa desktop do projeto Silva Farias Advogados">
+            </a>
+            <div class="service-title">
+              <span class="icon">03</span>
+              <h3 class="serif"><a href="projetos/silva-farias-advogados.html">Silva Farias Advogados</a></h3>
+            </div>
+            <p>Site publicado para apresentar atua&ccedil;&atilde;o tribut&aacute;ria e societ&aacute;ria, equipe, reconhecimentos e contato.</p>
+          </article>
+        </div>
+
+        <div class="portfolio-service-actions">
+          <a class="pill dark" href="portfolio.html">Ver todos os projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <span class="section-label">Contato</span>
+          <h2 class="section-title serif">Este portfolio é expositivo. Meu contexto profissional está na Cocorico.live.</h2>
+          <p class="lead">
+            Para conhecer a empresa onde trabalho e o tipo de projeto que faz parte da minha rotina profissional, acesse Cocorico.live. Aqui mantenho apenas meu acervo pessoal de portfólio.
+          </p>
+          <div class="contact-links" aria-label="Links de contato e perfis">
+            <a class="contact-card cocorico-card" href="https://www.cocorico.live/contato" target="_blank" rel="noreferrer">
+              <span class="contact-card-media">
+                <svg class="cocorico-rooster-icon" viewBox="0 0 359.658 414.525" aria-hidden="true">
+                  <g transform="matrix(1,0,0,1,-564.844,-1207.87)">
+                    <g transform="matrix(0.840895,0,0,0.840895,-1504.33,366.627)">
+                      <g transform="matrix(1.06773,0,0,1.06773,-683.365,-584.918)">
+                        <path d="M3141.89,1897.57C3175.59,1897.57 3202.9,1870.25 3202.9,1836.56C3202.9,1820.38 3196.47,1804.86 3185.03,1793.42L3141.89,1836.56L3141.89,1897.57Z"></path>
+                      </g>
+                      <g transform="matrix(1.06028,0,0,1.06028,-653.122,-568.094)">
+                        <path d="M3131.31,1829.12C3130.73,1829.13 3130.15,1829.13 3129.58,1829.13C3097.97,1829.13 3073.4,1817.46 3049.79,1796.73L3135.51,1701.67L3135.51,1574.43C3206.73,1574.43 3264.47,1631.4 3264.47,1701.67C3264.47,1747.78 3236.26,1787.35 3199,1809.67C3195.69,1798.47 3186.54,1788.78 3179.09,1781.33L3131.31,1829.12Z"></path>
+                      </g>
+                      <g transform="matrix(1.07355,0,0,1.07355,-691.618,-590.161)">
+                        <path d="M3126.05,1696.39C3102.81,1675.36 3072.62,1663.71 3041.33,1663.71C2999.19,1663.71 2959.81,1684.78 2936.32,1719.89L3043,1790.34L3126.05,1696.39Z"></path>
+                      </g>
+                      <g transform="matrix(0.92552,0,0,0.92552,-231.195,-354.377)">
+                        <path d="M3086.41,1463.82C3075.32,1474.91 3069.09,1489.95 3069.09,1505.63C3069.09,1538.29 3095.57,1564.76 3128.22,1564.76L3128.22,1505.63L3086.41,1463.82Z"></path>
+                      </g>
+                      <g transform="matrix(0.742404,0,0,0.742404,-92.5859,-82.7792)">
+                        <path d="M3723.16,1583.25C3723.8,1537.18 3763.16,1500.87 3811.32,1500.87C3814.05,1500.87 3816.78,1500.99 3819.51,1501.23L3811.32,1585.3L3890.37,1622.36C3884.47,1633.95 3877.16,1643.25 3866.99,1650.95C3834.31,1609.91 3780.32,1583.44 3723.16,1583.25ZM3747.5,1559.94C3752.81,1559.94 3757.12,1564.25 3757.12,1569.56C3757.12,1574.87 3752.81,1579.17 3747.5,1579.17C3742.2,1579.17 3737.89,1574.87 3737.89,1569.56C3737.89,1564.25 3742.2,1559.94 3747.5,1559.94Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span>
+                <strong>Cocorico.live</strong>
+                <small>Empresa onde atuo</small>
+              </span>
+            </a>
+            <a class="contact-card" href="https://github.com/mluizuliana" target="_blank" rel="noreferrer">
+              <span class="contact-card-media">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+              </span>
+              <span>
+                <strong>GitHub</strong>
+                <small>Repositórios e estudos</small>
+              </span>
+            </a>
+            <a class="contact-card" href="https://www.instagram.com/p/DDdWI2jpBRx/" target="_blank" rel="noreferrer">
+              <span class="contact-card-media">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <path d="M17.5 6.5h.01"></path>
+                </svg>
+              </span>
+              <span>
+                <strong>Instagram</strong>
+                <small>Presença e registros</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">MEIGAN.DEV</div>
+    <p>&copy; 2026 Meigan Luiz Uliana &bull; Desenvolvedor Web</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
