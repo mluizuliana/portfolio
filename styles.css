@@ -2760,6 +2760,11 @@ h1 span {
   .archive-hero,
   .project-page-hero,
   .project-case-hero,
+  .split,
+  .about-copy,
+  .portrait,
+  .brand-portrait,
+  .portrait-frame,
   .portfolio-content,
   .all-projects-grid,
   .project-list-card,
@@ -2783,6 +2788,8 @@ h1 span {
 
   .section-copy,
   .lead,
+  .about-copy .section-title,
+  .about-copy .section-copy,
   .project-overview-copy .section-title,
   .project-overview-copy .section-copy,
   .project-list-content p,
@@ -2820,6 +2827,47 @@ h1 span {
 
   .soft-grid {
     grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .split {
+    justify-items: center;
+    row-gap: 34px;
+  }
+
+  .about-copy {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .about-copy .section-label {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-copy .section-title,
+  .about-copy .section-copy {
+    text-align: center;
+  }
+
+  .brand-portrait {
+    width: 100%;
+    max-width: 360px;
+    min-height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+  }
+
+  .portrait-frame {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .soft-card {
+    width: 100%;
   }
 
   .archive-hero,
@@ -3260,5 +3308,108 @@ h1 span {
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 980px) {
+  #about .split,
+  #about .about-copy,
+  #about .soft-grid,
+  #about .soft-card {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  #about .about-copy {
+    display: grid !important;
+    width: 100% !important;
+  }
+
+  #about .section-label,
+  #about .section-title,
+  #about .section-copy,
+  #about .soft-card h3,
+  #about .soft-card p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  #about .brand-portrait,
+  #about .portrait-frame {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #contact {
+    padding-bottom: 64px;
+  }
+
+  #contact .cta-box {
+    width: 100%;
+    padding: 38px 18px 34px;
+    border-radius: 30px;
+  }
+
+  #contact .section-title {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(30px, 9.5vw, 39px);
+    line-height: 1.16;
+  }
+
+  #contact .lead {
+    max-width: 300px;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  #contact .contact-links {
+    width: min(100%, 312px);
+    margin: 30px auto 0;
+    gap: 12px;
+  }
+
+  #contact .contact-card {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 78px;
+    align-items: center;
+    justify-content: start;
+    padding: 12px 14px;
+    border-radius: 24px;
+    text-align: left;
+  }
+
+  #contact .contact-card-media {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  #contact .contact-card-media svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  #contact .contact-card-media svg.cocorico-rooster-icon {
+    width: 22px;
+    height: 25px;
+  }
+
+  #contact .contact-card strong {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  #contact .contact-card small {
+    margin-top: 3px;
+    font-size: 13px;
+    line-height: 1.35;
   }
 }
