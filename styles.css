@@ -50,6 +50,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -69,6 +70,55 @@ body.menu-open {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a,
+button,
+summary,
+label,
+select,
+textarea,
+input,
+[role="button"],
+[tabindex],
+.pill,
+.menu-toggle,
+.theme-toggle,
+.contact-card,
+.service-card,
+.project-list-card,
+.project-list-media,
+.project-action,
+.project-live-link,
+.case-card,
+.portfolio-card {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+a,
+button,
+[role="button"],
+.pill,
+.menu-toggle,
+.theme-toggle,
+.contact-card,
+.service-card,
+.project-list-card,
+.project-list-media,
+.project-action,
+.project-live-link,
+.case-card,
+.portfolio-card {
+  touch-action: manipulation;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+summary:focus:not(:focus-visible),
+[role="button"]:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .serif {
