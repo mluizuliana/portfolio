@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System - Portfolio Pet Sitter Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --stone-50: #fafaf9;
+      --stone-100: #f5f5f4;
+      --stone-200: #e7e5e4;
+      --stone-300: #d6d3d1;
+      --stone-400: #a8a29e;
+      --stone-500: #78716c;
+      --stone-700: #44403c;
+      --stone-800: #292524;
+      --stone-900: #1c1917;
+      --white: #ffffff;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-2xl: 48px;
+      --container: 1120px;
+      --shadow-soft: 0 20px 70px rgba(28, 25, 23, .08);
+      --border-soft: 1px solid rgba(214, 211, 209, .7);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--stone-800);
+      background: var(--stone-50);
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .serif {
+      font-family: "Noto Serif JP", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: rgba(250, 250, 249, .9);
+      border-bottom: var(--border-soft);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .22em;
+      color: var(--stone-900);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--stone-500);
+    }
+
+    .nav-links a:hover {
+      color: var(--stone-900);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      border: var(--border-soft);
+      background: var(--white);
+      color: var(--stone-900);
+      box-shadow: 0 8px 24px rgba(28, 25, 23, .05);
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-2px);
+      background: var(--stone-100);
+    }
+
+    .pill.dark {
+      color: var(--stone-50);
+      background: var(--stone-900);
+      border-color: var(--stone-900);
+    }
+
+    .pill.dark:hover {
+      background: var(--stone-800);
+    }
+
+    .hero {
+      padding: 152px 0 92px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 16px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      color: var(--stone-700);
+      background: var(--stone-200);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0 auto;
+      color: var(--stone-900);
+      font-size: clamp(34px, 5.1vw, 64px);
+      line-height: 1.35;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 28px auto 0;
+      color: var(--stone-500);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 42px;
+    }
+
+    .hero-media {
+      position: relative;
+      margin-top: 76px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: var(--stone-200);
+      border: var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(28, 25, 23, 0), rgba(28, 25, 23, .14));
+      pointer-events: none;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section.white {
+      background: var(--white);
+    }
+
+    .section.dark {
+      color: var(--stone-50);
+      background: var(--stone-900);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 66px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--stone-400);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--stone-900);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.35;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    .dark .section-title {
+      color: var(--stone-50);
+    }
+
+    .section-copy {
+      margin: 20px auto 0;
+      color: var(--stone-500);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .dark .section-copy {
+      color: var(--stone-400);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .86fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .portrait {
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: var(--stone-100);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .portrait img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .problem-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .soft-card {
+      display: flex;
+      gap: 18px;
+      padding: 24px;
+      background: var(--stone-50);
+      border: 1px solid var(--stone-100);
+      border-radius: var(--radius-lg);
+    }
+
+    .icon {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--stone-700);
+      background: var(--white);
+      border: var(--border-soft);
+      font-size: 20px;
+    }
+
+    .soft-card h3,
+    .service-card h3,
+    .case-card h3,
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--stone-900);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .soft-card p,
+    .service-card p,
+    .case-card p,
+    .step p {
+      margin: 0;
+      color: var(--stone-500);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 42px;
+    }
+
+    .service-card {
+      min-width: 0;
+    }
+
+    .service-image {
+      overflow: hidden;
+      margin-bottom: 26px;
+      border-radius: var(--radius-lg);
+      background: var(--stone-200);
+    }
+
+    .service-image img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.04);
+    }
+
+    .service-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .service-title .icon {
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+      color: var(--stone-500);
+      background: var(--stone-50);
+    }
+
+    .content-card {
+      margin-top: 78px;
+      padding: 48px;
+      background: var(--white);
+      border: 1px solid var(--stone-100);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .content-card h3 {
+      margin: 0 0 36px;
+      text-align: center;
+      color: var(--stone-900);
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px;
+    }
+
+    .care-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .care-item .icon {
+      width: 48px;
+      height: 48px;
+      background: var(--stone-50);
+    }
+
+    .care-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--stone-900);
+      font-weight: 500;
+    }
+
+    .care-item span {
+      display: block;
+      color: var(--stone-500);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .case-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 28px;
+      background: var(--stone-50);
+      border: 1px solid var(--stone-100);
+      border-radius: var(--radius-xl);
+    }
+
+    .case-thumb {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--stone-200);
+    }
+
+    .case-thumb img {
+      height: 100%;
+      min-height: 180px;
+      object-fit: cover;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      min-height: 30px;
+      padding: 0 12px;
+      margin-bottom: 14px;
+      border: var(--border-soft);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--stone-500);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .dark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid rgba(168, 162, 158, .28);
+      border-radius: var(--radius-xl);
+      background: rgba(168, 162, 158, .28);
+    }
+
+    .dark-panel {
+      min-height: 310px;
+      display: grid;
+      place-items: center;
+      padding: 54px;
+      text-align: center;
+      background: var(--stone-800);
+    }
+
+    .dark-panel .icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 26px;
+      color: var(--stone-300);
+      background: transparent;
+      border-color: transparent;
+      font-size: 24px;
+    }
+
+    .dark-panel .section-label {
+      margin-bottom: 14px;
+    }
+
+    .dark-panel h3 {
+      margin: 0;
+      color: var(--stone-50);
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .dark-panel p {
+      max-width: 360px;
+      margin: 22px auto 0;
+      color: var(--stone-400);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .price strong {
+      color: var(--white);
+      font-size: 42px;
+      font-weight: 500;
+    }
+
+    .flow {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .flow::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--stone-200);
+    }
+
+    .step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .step-badge {
+      width: 80px;
+      height: 80px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 22px;
+      border: var(--border-soft);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--stone-500);
+      box-shadow: 0 10px 28px rgba(28, 25, 23, .05);
+      font-size: 24px;
+    }
+
+    .step:last-child .step-badge {
+      color: var(--white);
+      background: var(--stone-900);
+      border-color: var(--stone-900);
+    }
+
+    .step small {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--stone-400);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .token {
+      overflow: hidden;
+      background: var(--white);
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(28, 25, 23, .04);
+    }
+
+    .swatch {
+      height: 112px;
+      background: var(--color);
+      border-bottom: var(--border-soft);
+    }
+
+    .token div:last-child {
+      padding: 16px;
+    }
+
+    .token strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--stone-900);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .token code {
+      color: var(--stone-500);
+      font-family: inherit;
+      font-size: 12px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 78px 48px;
+      text-align: center;
+      background: rgba(245, 245, 244, .82);
+      border: var(--border-soft);
+      border-radius: var(--radius-2xl);
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      top: -250px;
+      left: 50%;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: var(--white);
+      filter: blur(48px);
+      opacity: .8;
+      transform: translateX(-50%);
+    }
+
+    .cta-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer {
+      padding: 48px 0;
+      color: var(--stone-400);
+      background: var(--stone-900);
+      border-top: 1px solid var(--stone-800);
+      text-align: center;
+    }
+
+    .footer .brand {
+      color: var(--stone-300);
+      margin-bottom: 14px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .split,
+      .service-grid,
+      .care-grid,
+      .case-grid,
+      .dark-grid,
+      .flow,
+      .token-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .flow::before {
+        display: none;
+      }
+
+      .case-card {
+        grid-template-columns: 1fr;
+      }
+
+      .case-thumb img {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      .header .pill {
+        min-height: 40px;
+        padding-inline: 16px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding-top: 128px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .split,
+      .service-grid,
+      .care-grid,
+      .case-grid,
+      .dark-grid,
+      .flow,
+      .token-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-card {
+        padding: 28px;
+      }
+
+      .dark-panel {
+        padding: 42px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="brand">MEIGAN.DEV</a>
+      <nav class="nav-links" aria-label="Navegacao principal">
+        <a href="#services">Servicos</a>
+        <a href="#cases">Cases</a>
+        <a href="#tokens">Tokens</a>
+        <a href="#flow">Fluxo</a>
+      </nav>
+      <a href="#contact" class="pill dark">Contato</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="eyebrow">Portfolio calmo e confiavel</span>
+        <h1 class="serif">Sites com cuidado nos detalhes, criados para transmitir confianca desde a primeira dobra.</h1>
+        <p class="lead">
+          Uma segunda direcao visual para o seu portfolio: mais editorial, suave e premium, inspirada no modelo pet-sitter.
+          Ideal para apresentar cases com uma sensacao de acolhimento, metodo e profissionalismo.
+        </p>
+        <div class="actions">
+          <a class="pill dark" href="#cases">Ver case modelo</a>
+          <a class="pill" href="#tokens">Ver design system</a>
+        </div>
+        <div class="hero-media">
+          <img src="../../assets/pet-sitter-reference.png" alt="Preview do modelo visual pet sitter">
+        </div>
+      </div>
+    </section>
+
+    <section class="section white">
+      <div class="container split">
+        <div class="portrait">
+          <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/408eccf8-c298-4074-ac0d-44fc9216fd0a_800w.jpg" alt="Imagem editorial usada como referencia de atmosfera visual">
+        </div>
+        <div>
+          <span class="section-label">Visual Positioning</span>
+          <h2 class="section-title serif">Uma identidade para sites que precisam parecer humanos, seguros e bem cuidados.</h2>
+          <p class="section-copy">
+            O modelo usa baixa saturacao, bordas grandes, serifas delicadas, fotos amplas e textos com bastante respiro.
+            Para o seu portfolio, isso vira uma vitrine mais madura, menos tecnica e mais orientada a confianca.
+          </p>
+          <div class="problem-list">
+            <article class="soft-card">
+              <span class="icon">01</span>
+              <div>
+                <h3>Primeira impressao serena</h3>
+                <p>Hero centralizado, CTA discreto e imagem grande para sustentar credibilidade.</p>
+              </div>
+            </article>
+            <article class="soft-card">
+              <span class="icon">02</span>
+              <div>
+                <h3>Cases com narrativa</h3>
+                <p>Cards voltados para problema, solucao e resultado, sem excesso visual.</p>
+              </div>
+            </article>
+            <article class="soft-card">
+              <span class="icon">03</span>
+              <div>
+                <h3>Design com cara premium</h3>
+                <p>Paleta stone, serifas e cantos arredondados criam um portfolio mais autoral.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Portfolio Services</span>
+          <h2 class="section-title serif">Blocos principais do portfolio nessa linguagem</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/90b5eae8-d7a3-4659-a89d-02693afec70e_800w.jpg" alt="Referencia visual de card com imagem">
+            </div>
+            <div class="service-title">
+              <span class="icon">A</span>
+              <h3 class="serif">Estudo de caso</h3>
+            </div>
+            <p>Nome do projeto, link no ar, prints desktop/mobile, stack e resumo da sua participacao.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bd382a53-7a32-4ec2-a2a6-d111bc099c72_800w.jpg" alt="Referencia visual de atendimento profissional">
+            </div>
+            <div class="service-title">
+              <span class="icon">B</span>
+              <h3 class="serif">Processo de entrega</h3>
+            </div>
+            <p>Explicacao leve sobre briefing, construcao com IA, implementacao, revisao e publicacao.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/9995ecc4-6aab-480a-b348-ac43019e3e34_800w.jpg" alt="Referencia visual de relato e cuidado">
+            </div>
+            <div class="service-title">
+              <span class="icon">C</span>
+              <h3 class="serif">Resultados</h3>
+            </div>
+            <p>Melhoria visual, organizacao, conversao, SEO, performance ou clareza da jornada.</p>
+          </article>
+        </div>
+
+        <div class="content-card">
+          <h3 class="serif">Campos de cada case</h3>
+          <div class="care-grid">
+            <div class="care-item"><span class="icon">1</span><div><strong>Nome e contexto</strong><span>Tipo de site, objetivo e link publicado.</span></div></div>
+            <div class="care-item"><span class="icon">2</span><div><strong>Prints</strong><span>Desktop, mobile e detalhes de interface.</span></div></div>
+            <div class="care-item"><span class="icon">3</span><div><strong>O que voce fez</strong><span>Design, estrutura, IA, WordPress, SEO, CSS e JS.</span></div></div>
+            <div class="care-item"><span class="icon">4</span><div><strong>Problema</strong><span>O que precisava melhorar no projeto.</span></div></div>
+            <div class="care-item"><span class="icon">5</span><div><strong>Solucao</strong><span>Como voce conduziu a entrega.</span></div></div>
+            <div class="care-item"><span class="icon">6</span><div><strong>Resultado</strong><span>Ganhos visuais, comerciais ou operacionais.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="cases">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Case Study Cards</span>
+          <h2 class="section-title serif">Como os projetos aparecem nesse estilo</h2>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-thumb">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a8643b56-2d82-4e0c-b473-d9f8ddeb6215_800w.jpg" alt="Imagem de referencia para card de case">
+            </div>
+            <div>
+              <span class="tag">WordPress / SEO / CSS</span>
+              <h3 class="serif">Site institucional com foco em confianca</h3>
+              <p>Reestruturei a primeira dobra, reorganizei a hierarquia de conteudo e criei uma experiencia mobile mais clara.</p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-thumb">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/edf25274-144e-4d37-a9c8-4afdb22099b6_800w.jpg" alt="Imagem de referencia para segundo case">
+            </div>
+            <div>
+              <span class="tag">Loja Integrada / IA / UX</span>
+              <h3 class="serif">Loja com jornada de compra mais tranquila</h3>
+              <p>Ajustei vitrine, chamadas, secoes de confianca e layout responsivo para facilitar a decisao de compra.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container">
+        <div class="dark-grid">
+          <article class="dark-panel">
+            <div>
+              <span class="icon">⌖</span>
+              <span class="section-label">Repository</span>
+              <h3 class="serif">GitHub Pages</h3>
+              <p>Formato estatico, gratuito e facil de alimentar a cada novo projeto publicado.</p>
+            </div>
+          </article>
+          <article class="dark-panel">
+            <div>
+              <span class="icon">$</span>
+              <span class="section-label">Cost</span>
+              <h3 class="serif">R$ 0</h3>
+              <div class="price"><span>hospedagem</span><strong>free</strong></div>
+              <p>O foco continua sendo construir algo bonito, portavel e simples de manter.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Flow</span>
+          <h2 class="section-title serif">Fluxo para alimentar o portfolio</h2>
+          <p class="section-copy">A cada site novo, voce cria um case curto, visual e facil de comparar.</p>
+        </div>
+
+        <div class="flow">
+          <article class="step">
+            <div class="step-badge">1</div>
+            <small>Step 1</small>
+            <h3 class="serif">Coletar</h3>
+            <p>Link, prints, stack e contexto do projeto.</p>
+          </article>
+          <article class="step">
+            <div class="step-badge">2</div>
+            <small>Step 2</small>
+            <h3 class="serif">Narrar</h3>
+            <p>Problema, solucao e sua contribuicao.</p>
+          </article>
+          <article class="step">
+            <div class="step-badge">3</div>
+            <small>Step 3</small>
+            <h3 class="serif">Publicar</h3>
+            <p>Adicionar card e pagina do case no GitHub.</p>
+          </article>
+          <article class="step">
+            <div class="step-badge">4</div>
+            <small>Step 4</small>
+            <h3 class="serif">Atualizar</h3>
+            <p>Manter o portfolio vivo a cada entrega.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="tokens">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Design Tokens</span>
+          <h2 class="section-title serif">Base visual pet-sitter aplicada ao portfolio</h2>
+        </div>
+
+        <div class="token-grid">
+          <article class="token"><div class="swatch" style="--color:#fafaf9"></div><div><strong>Stone 50</strong><code>#fafaf9</code></div></article>
+          <article class="token"><div class="swatch" style="--color:#f5f5f4"></div><div><strong>Stone 100</strong><code>#f5f5f4</code></div></article>
+          <article class="token"><div class="swatch" style="--color:#e7e5e4"></div><div><strong>Stone 200</strong><code>#e7e5e4</code></div></article>
+          <article class="token"><div class="swatch" style="--color:#78716c"></div><div><strong>Stone 500</strong><code>#78716c</code></div></article>
+          <article class="token"><div class="swatch" style="--color:#1c1917"></div><div><strong>Stone 900</strong><code>#1c1917</code></div></article>
+          <article class="token"><div class="swatch" style="--color:#ffffff"></div><div><strong>Cards</strong><code>white + border</code></div></article>
+          <article class="token"><div class="swatch" style="--color:linear-gradient(135deg,#fafaf9,#e7e5e4)"></div><div><strong>Soft Section</strong><code>quiet bands</code></div></article>
+          <article class="token"><div class="swatch" style="--color:#292524"></div><div><strong>Dark Panel</strong><code>#292524</code></div></article>
+          <article class="token"><div class="swatch" style="--color:rgba(245,245,244,.82)"></div><div><strong>CTA Box</strong><code>rounded 48px</code></div></article>
+          <article class="token"><div class="swatch" style="--color:linear-gradient(180deg,#ffffff,#fafaf9)"></div><div><strong>Typography</strong><code>Noto Serif JP</code></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="section-title serif">Um portfolio mais sereno para projetos que precisam vender confianca.</h2>
+          <p class="lead">Esta variacao funciona bem para cases de saude, beleza, servicos locais, profissionais autonomos e marcas que precisam parecer cuidadosas.</p>
+          <div class="actions">
+            <a class="pill dark" href="#home">Voltar ao topo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="brand">MEIGAN.DEV</div>
+    <p>Pet-sitter visual system variation for GitHub portfolio.</p>
+  </footer>
+</body>
+</html>

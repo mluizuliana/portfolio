@@ -54,7 +54,7 @@
 
     <section class="section white">
       <div class="container">
-        <div class="all-projects-grid">
+        <div class="all-projects-grid" id="project-grid" data-page-size="15">
           <article class="project-list-card project-list-card--cover">
             <a class="project-list-media project-list-media--cover dental" href="projetos/jussara-ulian.html" aria-label="Abrir projeto Dra. Jussara Ulian">
               <img src="assets/jussara-section-inicio.jpg" alt="Capa desktop do site da Dra. Jussara Ulian" loading="eager">
@@ -104,7 +104,7 @@
           </article>
 
           <article class="project-list-card project-list-card--cover">
-            <a class="project-list-media project-list-media--cover legal" href="projetos/silva-farias-advogados.html" aria-label="Abrir projeto Silva Farias Advogados">
+            <a class="project-list-media project-list-media--cover legal image-crop-bottom" href="projetos/silva-farias-advogados.html" aria-label="Abrir projeto Silva Farias Advogados">
               <img src="assets/silva-section-inicio.jpg" alt="Capa desktop do site da Silva Farias Advogados" loading="lazy">
             </a>
             <div class="project-list-content">
@@ -347,7 +347,7 @@
           </article>
 
           <article class="project-list-card project-list-card--cover">
-            <a class="project-list-media project-list-media--cover project-list-media--fill" href="projetos/dbz-jogo-memoria.html" aria-label="Abrir estudo Jogo da Memoria DBZ">
+            <a class="project-list-media project-list-media--cover project-list-media--fill image-crop-bottom" href="projetos/dbz-jogo-memoria.html" aria-label="Abrir estudo Jogo da Memoria DBZ">
               <img src="assets/dbz-section-cartas-reveladas.jpg" alt="Tabuleiro do jogo da memoria Dragon Ball Z com cartas reveladas" loading="lazy">
             </a>
             <div class="project-list-content">
@@ -369,13 +369,73 @@
               </a>
             </div>
           </article>
+
+          <article class="project-list-card project-list-card--cover">
+            <a class="project-list-media project-list-media--cover project-list-media--fill project-list-media--pet-sitter" href="projetos/portfolio-editorial.html" aria-label="Abrir estudo Portfólio Editorial">
+              <img src="assets/portfolio-pet-sitter-cover.jpg" alt="Referência Pet Sitter com página editorial e fotografia" loading="lazy">
+            </a>
+            <div class="project-list-content">
+              <div class="project-list-title">
+                <span class="project-list-number">14</span>
+                <h2 class="serif">Estudo: Portfólio Editorial</h2>
+              </div>
+              <p>Primeira direção: uma linguagem serena inspirada no modelo Pet Sitter, com fotografia, tipografia serifada e foco em confiança.</p>
+              <div class="tag-list">
+                <span>HTML</span><span>CSS</span><span>Design System</span><span>Estudo visual</span>
+              </div>
+              <a class="project-action" href="projetos/portfolio-editorial.html">
+                <span>Ver projeto</span><span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-list-card project-list-card--cover">
+            <a class="project-list-media project-list-media--cover" href="projetos/portfolio-retro.html" aria-label="Abrir estudo Portfólio Retrô">
+              <img src="assets/portfolio-retro-cover.jpg" alt="Portfólio retrô com tipografia pixel e detalhes em ciano e magenta" loading="lazy">
+            </a>
+            <div class="project-list-content">
+              <div class="project-list-title">
+                <span class="project-list-number">15</span>
+                <h2 class="serif">Estudo: Portfólio Retrô</h2>
+              </div>
+              <p>Segunda direção: uma linguagem de arcade, com tipografia pixel, contraste forte e acentos em ciano e magenta.</p>
+              <div class="tag-list">
+                <span>HTML</span><span>CSS</span><span>Design System</span><span>Estudo visual</span>
+              </div>
+              <a class="project-action" href="projetos/portfolio-retro.html">
+                <span>Ver projeto</span><span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-list-card project-list-card--cover">
+            <a class="project-list-media project-list-media--cover" href="projetos/portfolio-hibrido.html" aria-label="Abrir estudo Portfólio Híbrido">
+              <img src="assets/portfolio-hybrid-cover.jpg" alt="Estudo visual de portfólio híbrido com tipografia editorial e detalhes de arcade" loading="lazy">
+            </a>
+            <div class="project-list-content">
+              <div class="project-list-title">
+                <span class="project-list-number">16</span>
+                <h2 class="serif">Estudo: Portfólio Híbrido</h2>
+              </div>
+              <p>Terceira direção: a composição editorial do primeiro estudo combinada com os detalhes de arcade do segundo.</p>
+              <div class="tag-list">
+                <span>HTML</span><span>CSS</span><span>Design System</span><span>Estudo visual</span>
+              </div>
+              <a class="project-action" href="projetos/portfolio-hibrido.html">
+                <span>Ver projeto</span><span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
         </div>
+
+        <nav class="project-pagination" aria-label="Páginas do portfólio" hidden></nav>
+        <p class="project-pagination-status" role="status" aria-live="polite" aria-atomic="true"></p>
 
         <div class="project-note">
           <div>
             <span class="section-label">Acervo completo</span>
             <h3 class="serif">Cada projeto tem seu pr&oacute;prio registro.</h3>
-            <p>Esta p&aacute;gina organiza o portf&oacute;lio em uma lista completa, com acesso direto aos cases individuais, tecnologias usadas, links publicados e contexto de cada entrega.</p>
+            <p>Explore sites publicados e estudos visuais, conhe&ccedil;a as tecnologias usadas e acesse os cases ou demonstra&ccedil;&otilde;es de cada projeto.</p>
           </div>
         </div>
       </div>
@@ -388,5 +448,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="portfolio-pagination.js"></script>
 </body>
 </html>

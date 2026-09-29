@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System - Meigan.dev Retro Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cyan: #03dffc;
+      --magenta: #ff03fc;
+      --yellow: #fcff03;
+      --black: #000000;
+      --white: #ffffff;
+      --dark: #111111;
+      --line: 4px;
+      --container: 1216px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--white);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: .1;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, .1) 2px,
+        rgba(0, 0, 0, .1) 4px
+      );
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .pixel {
+      font-family: "Press Start 2P", "Courier New", monospace;
+      letter-spacing: 0;
+    }
+
+    .inter {
+      font-family: "Inter", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, .95);
+      border-bottom: var(--line) solid var(--black);
+      transition: background-color .3s ease, border-color .3s ease;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand .cyan {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .nav-links a {
+      padding: 10px 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--magenta);
+    }
+
+    .theme-toggle {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--black);
+      border: 3px solid var(--black);
+      padding: 0;
+      width: 64px;
+      height: 32px;
+    }
+
+    .toggle-square {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      color: var(--black);
+      background: var(--cyan);
+      border: 2px solid var(--black);
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .toggle-square.dark {
+      color: var(--white);
+      background: var(--black);
+      border-color: var(--black);
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 148px 0 72px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle, #000 1.5px, transparent 1.5px) 0 0 / 30px 30px,
+        var(--white);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .88fr 1.15fr;
+      align-items: center;
+      gap: 64px;
+      min-height: calc(100vh - 220px);
+    }
+
+    .float-square {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .float-square.outline-magenta {
+      top: 128px;
+      left: 40px;
+      width: 80px;
+      height: 80px;
+      border: 4px solid var(--magenta);
+    }
+
+    .float-square.outline-cyan {
+      top: 360px;
+      right: 78px;
+      width: 64px;
+      height: 64px;
+      border: 4px solid var(--cyan);
+    }
+
+    .float-square.fill-yellow {
+      right: 56px;
+      bottom: 70px;
+      width: 128px;
+      height: 128px;
+      background: var(--yellow);
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: min(100%, 325px);
+      aspect-ratio: 1;
+      margin-left: 8px;
+    }
+
+    .avatar-wrap::before,
+    .avatar-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 12px -14px -14px 12px;
+      background: var(--cyan);
+      border: 0;
+      z-index: 0;
+    }
+
+    .avatar-wrap::after {
+      inset: 20px -22px -22px 20px;
+      background: var(--magenta);
+      z-index: -1;
+    }
+
+    .avatar {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      border: 6px solid var(--black);
+      background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .16) 2px, transparent 2px, transparent 5px),
+        linear-gradient(135deg, #02d9f7 0%, #7660ff 50%, #ff03fc 100%);
+    }
+
+    .avatar span {
+      color: var(--white);
+      font-size: clamp(58px, 7vw, 84px);
+      line-height: 1;
+      text-shadow: 9px 0 0 rgba(255, 255, 255, .45);
+    }
+
+    .eyebrow {
+      margin: 0 0 24px;
+      color: var(--cyan);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(58px, 8.2vw, 96px);
+      line-height: .95;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .name-line {
+      display: block;
+    }
+
+    .yellow-mark {
+      width: 176px;
+      height: 8px;
+      margin: 10px 0 10px;
+      background: var(--yellow);
+    }
+
+    .role {
+      margin: 0 0 30px;
+      color: var(--magenta);
+      font-size: 14px;
+      line-height: 1.7;
+      text-shadow: 3px 0 0 var(--cyan);
+    }
+
+    .hero-copy {
+      max-width: 560px;
+      margin: 0 0 34px;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+      padding: 0 32px;
+      background: var(--cyan);
+      color: var(--black);
+      border: var(--line) solid var(--black);
+      box-shadow: 8px 8px 0 var(--black);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover {
+      transform: translate(4px, 4px);
+      box-shadow: 4px 4px 0 var(--black);
+      background: var(--magenta);
+    }
+
+    .section {
+      position: relative;
+      padding: 86px 0 104px;
+      overflow: hidden;
+    }
+
+    .diagonal {
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 9px,
+          rgba(0, 0, 0, .9) 10px,
+          rgba(0, 0, 0, .9) 12px
+        ),
+        var(--white);
+    }
+
+    .dots {
+      background:
+        radial-gradient(circle, #000 2px, transparent 2px) 0 0 / 30px 30px,
+        var(--white);
+    }
+
+    .black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .black::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .22;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        var(--cyan) 2px,
+        var(--cyan) 4px
+      );
+    }
+
+    .section-head {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-head p {
+      margin: 0 0 18px;
+      color: var(--magenta);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .section-head.cyan p {
+      color: var(--cyan);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 64px);
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .underline {
+      width: 128px;
+      height: 8px;
+      margin: 24px auto 0;
+      background: var(--cyan);
+    }
+
+    .section-head.cyan .underline {
+      background: var(--magenta);
+    }
+
+    .project-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: var(--line) solid var(--black);
+      box-shadow: 8px 8px 0 var(--black);
+      overflow: hidden;
+    }
+
+    .project-screen {
+      min-height: 194px;
+      display: grid;
+      place-items: center;
+      background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .16) 2px, transparent 2px, transparent 5px),
+        linear-gradient(135deg, var(--start), var(--end));
+    }
+
+    .project-screen .pixel {
+      font-size: 20px;
+      color: var(--number-color);
+    }
+
+    .project-body {
+      padding: 26px 24px 24px;
+    }
+
+    .project-body h3 {
+      margin: 0 0 12px;
+      padding-bottom: 12px;
+      border-bottom: var(--line) solid var(--accent);
+      font-size: 22px;
+      line-height: 1.15;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .project-body p {
+      margin: 0 0 18px;
+      min-height: 66px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 11px;
+      background: var(--black);
+      color: var(--tag-color);
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .about-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr);
+      align-items: center;
+      gap: 76px;
+    }
+
+    .about-copy p {
+      margin: 0 0 24px;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .skill {
+      margin-top: 26px;
+    }
+
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .skill-row .pixel {
+      font-size: 10px;
+      color: var(--accent);
+    }
+
+    .skill-bar {
+      height: 26px;
+      background: var(--black);
+      border: var(--line) solid var(--black);
+      overflow: hidden;
+    }
+
+    .skill-bar span {
+      display: block;
+      height: 100%;
+      width: var(--value);
+      background:
+        repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0, 0, 0, .2) 8px, rgba(0, 0, 0, .2) 10px),
+        var(--accent);
+    }
+
+    .tool-art {
+      position: relative;
+      min-height: 430px;
+    }
+
+    .tool-base {
+      position: absolute;
+      inset: 0 40px 0 0;
+      background: var(--cyan);
+      border: var(--line) solid var(--black);
+      box-shadow: 8px 8px 0 var(--black);
+    }
+
+    .tool-outline {
+      position: absolute;
+      inset: 32px 8px -32px 32px;
+      border: var(--line) solid var(--magenta);
+    }
+
+    .tool-outline.yellow {
+      inset: 64px -24px -64px 64px;
+      border-color: var(--yellow);
+    }
+
+    .tool-icons {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 64px);
+      grid-auto-rows: 64px;
+      place-content: center;
+      gap: 28px;
+    }
+
+    .tool-icon {
+      display: grid;
+      place-items: center;
+      background: var(--white);
+      border: var(--line) solid var(--black);
+      box-shadow: 4px 4px 0 var(--black);
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .token-card {
+      position: relative;
+      z-index: 1;
+      background: var(--white);
+      color: var(--black);
+      border: var(--line) solid var(--black);
+      box-shadow: 8px 8px 0 var(--black);
+      overflow: hidden;
+    }
+
+    .swatch {
+      min-height: 118px;
+      border-bottom: var(--line) solid var(--black);
+      background: var(--color);
+    }
+
+    .swatch.dot {
+      background:
+        radial-gradient(circle, #000 2px, transparent 2px) 0 0 / 30px 30px,
+        var(--white);
+    }
+
+    .swatch.diag {
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(0,0,0,.9) 10px, rgba(0,0,0,.9) 12px),
+        var(--white);
+    }
+
+    .token-info {
+      padding: 18px;
+    }
+
+    .token-info strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .token-info code {
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .terminal {
+      position: relative;
+      z-index: 1;
+      max-width: 670px;
+      margin: 0 auto;
+      padding: 32px;
+      background: var(--black);
+      border: var(--line) solid var(--cyan);
+      box-shadow: 8px 8px 0 var(--cyan);
+    }
+
+    .terminal-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--cyan);
+      color: var(--cyan);
+      font-size: 11px;
+    }
+
+    .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      background: var(--magenta);
+    }
+
+    .dot:nth-child(2) {
+      background: var(--yellow);
+    }
+
+    .dot:nth-child(3) {
+      background: var(--cyan);
+    }
+
+    .field {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .field label {
+      color: var(--cyan);
+      font-size: 11px;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      color: var(--white);
+      background: transparent;
+      border: var(--line) solid var(--cyan);
+      padding: 15px 16px;
+      outline: none;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 16px;
+      resize: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--magenta);
+    }
+
+    .terminal .btn {
+      width: 100%;
+      border-color: var(--cyan);
+      box-shadow: none;
+    }
+
+    .terminal-log {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 2px solid var(--cyan);
+      color: var(--cyan);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      position: relative;
+      background: var(--white);
+      border-top: var(--line) solid var(--black);
+      padding: 30px 0;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .05;
+      background: repeating-linear-gradient(90deg, transparent, transparent 20px, var(--black) 20px, var(--black) 21px);
+    }
+
+    .footer-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .footer .btn {
+      min-height: 46px;
+      padding: 0 18px;
+      box-shadow: 4px 4px 0 var(--black);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        grid-template-columns: 1fr auto;
+      }
+
+      .nav-links {
+        order: 3;
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 14px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .token-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding-top: 156px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        min-height: auto;
+        padding: 18px 0;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .nav-links {
+        gap: 20px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding-top: 172px;
+      }
+
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .avatar-wrap {
+        width: min(100%, 280px);
+      }
+
+      .float-square.fill-yellow {
+        width: 70px;
+        height: 70px;
+      }
+
+      .project-grid,
+      .token-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-body p {
+        min-height: auto;
+      }
+
+      .tool-art {
+        min-height: 340px;
+      }
+
+      .tool-icons {
+        grid-template-columns: repeat(2, 58px);
+        grid-auto-rows: 58px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand pixel" href="#home" aria-label="Meigan.dev">
+        <span class="cyan">MEIGAN</span><span>.DEV</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegacao principal">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="theme-toggle" aria-label="Theme preview">
+        <span class="toggle-square pixel">o</span>
+        <span class="toggle-square dark pixel">)</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <span class="float-square outline-magenta"></span>
+      <span class="float-square outline-cyan"></span>
+      <span class="float-square fill-yellow"></span>
+      <div class="container hero-grid">
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <span class="pixel">ML</span>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow pixel">HELLO, I'M</p>
+          <h1><span class="name-line">MEIGAN</span><span class="name-line">LUIZ</span></h1>
+          <div class="yellow-mark"></div>
+          <p class="role pixel">WEB DEVELOPER</p>
+          <p class="hero-copy inter">Portfolio visual para mostrar sites criados com WordPress, Loja Integrada, IA, CSS, JS e SEO com a mesma linguagem retro-futurista do tema ao vivo.</p>
+          <a class="btn pixel" href="#projects">VIEW PROJECTS</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diagonal" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="pixel">MY WORK</p>
+          <h2>PROJECTS</h2>
+          <div class="underline"></div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" style="--start:#03dffc;--end:#ff03fc;--accent:#03dffc;--number-color:#fff;--tag-color:#03dffc;">
+            <div class="project-screen"><span class="pixel">01</span></div>
+            <div class="project-body">
+              <h3>WORDPRESS SITE</h3>
+              <p class="inter">Site institucional com layout responsivo, arquitetura clara e paginas pensadas para conversao.</p>
+              <div class="tags">
+                <span class="tag pixel">WP</span>
+                <span class="tag pixel" style="--tag-color:#ff03fc;">SEO</span>
+                <span class="tag pixel" style="--tag-color:#fcff03;">CSS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--start:#fcff03;--end:#ff03fc;--accent:#ff03fc;--number-color:#000;--tag-color:#03dffc;">
+            <div class="project-screen"><span class="pixel">02</span></div>
+            <div class="project-body">
+              <h3>LOJA ONLINE</h3>
+              <p class="inter">E-commerce com vitrine, hierarquia de produto e ajustes visuais para melhorar a jornada de compra.</p>
+              <div class="tags">
+                <span class="tag pixel">LOJA</span>
+                <span class="tag pixel" style="--tag-color:#ff03fc;">UX</span>
+                <span class="tag pixel" style="--tag-color:#fcff03;">SEO</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--start:#03dffc;--end:#fcff03;--accent:#fcff03;--number-color:#000;--tag-color:#03dffc;">
+            <div class="project-screen"><span class="pixel">03</span></div>
+            <div class="project-body">
+              <h3>AI LANDING</h3>
+              <p class="inter">Landing page criada com apoio de IA para copy, estrutura, prototipo visual e otimizacao rapida.</p>
+              <div class="tags">
+                <span class="tag pixel">IA</span>
+                <span class="tag pixel" style="--tag-color:#ff03fc;">JS</span>
+                <span class="tag pixel" style="--tag-color:#fcff03;">CTA</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--start:#ff03fc;--end:#03dffc;--accent:#03dffc;--number-color:#fff;--tag-color:#03dffc;">
+            <div class="project-screen"><span class="pixel">04</span></div>
+            <div class="project-body">
+              <h3>CASE STUDY</h3>
+              <p class="inter">Pagina de estudo de caso com problema, solucao, prints desktop/mobile e resultado observado.</p>
+              <div class="tags">
+                <span class="tag pixel">CASE</span>
+                <span class="tag pixel" style="--tag-color:#ff03fc;">PRINTS</span>
+                <span class="tag pixel" style="--tag-color:#fcff03;">ROI</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--start:#03dffc;--end:#fcff03;--accent:#ff03fc;--number-color:#000;--tag-color:#03dffc;">
+            <div class="project-screen"><span class="pixel">05</span></div>
+            <div class="project-body">
+              <h3>SEO REFRESH</h3>
+              <p class="inter">Reorganizacao de conteudo, titulos, estrutura visual e pontos de confianca para busca organica.</p>
+              <div class="tags">
+                <span class="tag pixel">SEO</span>
+                <span class="tag pixel" style="--tag-color:#ff03fc;">COPY</span>
+                <span class="tag pixel" style="--tag-color:#fcff03;">UX</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--start:#fcff03;--end:#03dffc;--accent:#fcff03;--number-color:#000;--tag-color:#03dffc;">
+            <div class="project-screen"><span class="pixel">06</span></div>
+            <div class="project-body">
+              <h3>PORTFOLIO HUB</h3>
+              <p class="inter">Base visual para alimentar novos sites publicados no GitHub Pages ao longo do tempo.</p>
+              <div class="tags">
+                <span class="tag pixel">GIT</span>
+                <span class="tag pixel" style="--tag-color:#ff03fc;">HTML</span>
+                <span class="tag pixel" style="--tag-color:#fcff03;">CSS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dots" id="about">
+      <div class="container">
+        <div class="section-head cyan">
+          <p class="pixel">WHO AM I</p>
+          <h2>ABOUT ME</h2>
+          <div class="underline"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="inter">Sou programador e desenvolvo sites com IA, WordPress, Loja Integrada e o que for necessario para entregar paginas bonitas, funcionais e alinhadas ao objetivo comercial.</p>
+            <p class="inter">Este design system transforma cada entrega em um case: nome do projeto, prints desktop/mobile, link no ar, tecnologias, problema, solucao e resultado.</p>
+
+            <div class="skill" style="--accent:#03dffc;--value:95%;">
+              <div class="skill-row"><span>FRONTEND</span><span class="pixel">95%</span></div>
+              <div class="skill-bar"><span></span></div>
+            </div>
+            <div class="skill" style="--accent:#ff03fc;--value:88%;">
+              <div class="skill-row"><span>WORDPRESS / LOJAS</span><span class="pixel">88%</span></div>
+              <div class="skill-bar"><span></span></div>
+            </div>
+            <div class="skill" style="--accent:#fcff03;--value:90%;">
+              <div class="skill-row"><span>IA + SEO + UX</span><span class="pixel">90%</span></div>
+              <div class="skill-bar"><span></span></div>
+            </div>
+          </div>
+
+          <div class="tool-art" aria-label="Ilustracao geometrica do sistema visual">
+            <div class="tool-base"></div>
+            <div class="tool-outline"></div>
+            <div class="tool-outline yellow"></div>
+            <div class="tool-icons">
+              <span class="tool-icon">&lt;/&gt;</span>
+              <span class="tool-icon">WP</span>
+              <span class="tool-icon">DB</span>
+              <span class="tool-icon">AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diagonal" id="tokens">
+      <div class="container">
+        <div class="section-head">
+          <p class="pixel">DESIGN TOKENS</p>
+          <h2>SYSTEM</h2>
+          <div class="underline"></div>
+        </div>
+
+        <div class="token-grid">
+          <article class="token-card">
+            <div class="swatch" style="--color:#03dffc;"></div>
+            <div class="token-info">
+              <strong class="pixel">CYAN</strong>
+              <code>#03dffc</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch" style="--color:#ff03fc;"></div>
+            <div class="token-info">
+              <strong class="pixel">MAGENTA</strong>
+              <code>#ff03fc</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch" style="--color:#fcff03;"></div>
+            <div class="token-info">
+              <strong class="pixel">YELLOW</strong>
+              <code>#fcff03</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch" style="--color:#000000;"></div>
+            <div class="token-info">
+              <strong class="pixel">BLACK</strong>
+              <code>#000000</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch dot"></div>
+            <div class="token-info">
+              <strong class="pixel">DOT GRID</strong>
+              <code>30px dots</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch diag"></div>
+            <div class="token-info">
+              <strong class="pixel">DIAGONAL</strong>
+              <code>45deg lines</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch" style="--color:linear-gradient(135deg,#03dffc,#ff03fc);"></div>
+            <div class="token-info">
+              <strong class="pixel">CRT GRADIENT</strong>
+              <code>scanline overlay</code>
+            </div>
+          </article>
+          <article class="token-card">
+            <div class="swatch" style="--color:#ffffff;"></div>
+            <div class="token-info">
+              <strong class="pixel">CARD</strong>
+              <code>4px border + 8px shadow</code>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section black" id="contact">
+      <div class="container">
+        <div class="section-head cyan">
+          <p class="pixel">GET IN TOUCH</p>
+          <h2>CONTACT</h2>
+          <div class="underline"></div>
+        </div>
+
+        <form class="terminal">
+          <div class="terminal-head">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <strong class="pixel">CASE.EXE</strong>
+          </div>
+
+          <div class="field">
+            <label class="pixel" for="case-name">PROJECT_NAME_</label>
+            <input id="case-name" type="text" placeholder="Nome do projeto...">
+          </div>
+
+          <div class="field">
+            <label class="pixel" for="case-stack">STACK_</label>
+            <input id="case-stack" type="text" placeholder="WordPress, IA, Loja Integrada, CSS...">
+          </div>
+
+          <div class="field">
+            <label class="pixel" for="case-result">RESULT_</label>
+            <textarea id="case-result" rows="5" placeholder="Problema, solucao e resultado..."></textarea>
+          </div>
+
+          <button class="btn pixel" type="button">SAVE CASE</button>
+
+          <div class="terminal-log pixel">
+            <div>&gt; READY TO RECEIVE YOUR NEXT PROJECT...</div>
+            <div>&gt; PORTFOLIO_GITHUB_PAGES_READY_</div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pixel">2026 MEIGAN.DEV // DESIGN SYSTEM V0.2</p>
+      <a class="btn pixel" href="#home">BACK TO TOP</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1293,6 +1293,58 @@ h1 span {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 56px 42px;
   align-items: start;
+  scroll-margin-top: 110px;
+}
+
+.all-projects-grid > [hidden],
+.project-pagination[hidden] {
+  display: none;
+}
+
+.project-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 56px;
+}
+
+.project-pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: var(--border-soft);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--stone-900);
+  font-size: 14px;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.project-pagination a[aria-current="page"],
+.project-pagination a:hover {
+  color: var(--stone-50);
+  background: var(--stone-900);
+}
+
+.project-pagination a:focus-visible {
+  outline: 2px solid var(--stone-900);
+  outline-offset: 4px;
+}
+
+.project-pagination-status {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--stone-500);
+}
+
+.project-list-content h2[tabindex="-1"]:focus {
+  outline: none;
 }
 
 .project-list-card {
@@ -1331,6 +1383,10 @@ h1 span {
 
 .project-list-media--fill img {
   object-fit: cover;
+}
+
+.project-list-media--pet-sitter img {
+  object-position: center bottom;
 }
 
 .project-list-card:hover .project-list-media img {
@@ -3462,4 +3518,19 @@ h1 span {
     font-size: 13px;
     line-height: 1.35;
   }
+}
+
+/* Hide the bottom strip captured in these screenshots without resizing the frame. */
+.image-crop-bottom {
+  position: relative;
+}
+
+.image-crop-bottom > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 102%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center top;
 }
