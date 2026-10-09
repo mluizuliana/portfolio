@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Estudo de portfólio editorial inspirado no visual Pet Sitter, com fotografia, tipografia serifada e apresentação de cases.">
+  <meta name="description" content="Meigan.dev — Pet Sitter Editorial: design system de portfólio com paleta stone, tipografia serifada, componentes suaves e narrativa de cases.">
   <meta name="theme-color" content="#fafaf9">
-  <title>Estudo: Portfólio Editorial | Meigan Luiz</title>
+  <title>Estudo: Pet Sitter Editorial | Meigan Luiz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -35,15 +35,15 @@
     </nav>
   </header>
 
-  <main>
+  <main class="design-system-case">
     <section class="project-page-hero project-case-hero">
       <div class="container">
         <nav class="project-breadcrumb" aria-label="Caminho do projeto">
           <a href="../index.html">Home</a><span>&middot;</span><a href="../portfolio.html">Portfólio</a><span>&middot;</span><span>Estudo</span>
         </nav>
         <span class="eyebrow">Direção 01 de 03 · Editorial</span>
-        <h1 class="serif">Estudo: Portfólio Editorial</h1>
-        <p class="lead">Uma proposta serena, inspirada no modelo Pet Sitter, para apresentar sites e serviços com fotografia, tipografia serifada e espaço para a narrativa de cada case.</p>
+        <h1 class="serif">Estudo: Pet Sitter Editorial</h1>
+        <p class="lead">Um design system de portfólio que transforma a calma da referência Pet Sitter em linguagem para apresentar projetos: paleta stone, serifas, fotografia ampla e cases com contexto.</p>
         <div class="project-meta-row"><span>HTML</span><span>CSS</span><span>Design System</span><span>Responsivo</span></div>
         <div class="project-live-actions">
           <a class="pill dark project-live-link" href="../demos/design-systems/portfolio-pet-sitter-design-system.html" target="_blank" rel="noopener noreferrer">Abrir demonstração</a>
@@ -60,14 +60,15 @@
       <div class="container project-overview">
         <div class="project-overview-copy">
           <span class="section-label">Sobre o projeto</span>
-          <h2 class="section-title serif">Uma direção visual que coloca clareza e confiança à frente.</h2>
-          <p class="section-copy">Este é o lado editorial do trio. A página de demonstração explora hierarquia tipográfica, tons neutros, fotografias e blocos de conteúdo para que os projetos possam ser lidos com calma. A direção retrô experimenta o extremo oposto; a híbrida aproxima as duas.</p>
+          <h2 class="section-title serif">Uma linguagem editorial para projetos que precisam ser compreendidos antes de impressionar.</h2>
+          <p class="section-copy">A demonstração organiza a experiência desde a primeira dobra até a ficha de cada case. A escala stone cria camadas discretas entre página, seções e cards; a combinação de Noto Serif JP com Noto Sans JP separa narrativa e informação prática. O sistema também define como coletar, narrar e atualizar novos projetos.</p>
         </div>
         <aside class="project-details-card">
           <h3>Ficha do projeto</h3>
           <dl class="project-details-list">
-            <div><dt>Tecnologias</dt><dd>HTML, CSS, layout responsivo e componentes de interface.</dd></div>
-            <div><dt>Contexto</dt><dd>Estudo visual de portfólio inspirado no modelo Pet Sitter. Os exemplos apresentados na demonstração são propostas de layout, não cases publicados.</dd></div>
+            <div><dt>Tecnologias</dt><dd>HTML, CSS, layout responsivo, componentes de case e tokens visuais.</dd></div>
+            <div><dt>Sistema</dt><dd>Paleta stone, Noto Serif JP e Noto Sans JP, cartões de borda suave, botões pill e painéis de contraste.</dd></div>
+            <div><dt>Contexto</dt><dd>Conceito visual inspirado na referência Pet Sitter. Os projetos dentro da demonstração são exemplos de apresentação, não novos cases publicados.</dd></div>
           </dl>
         </aside>
       </div>
@@ -78,7 +79,7 @@
         <div class="section-head">
           <span class="section-label">Composição visual</span>
           <h2 class="section-title serif">Do primeiro contato aos cards de projeto.</h2>
-          <p class="section-copy">A proposta usa uma primeira dobra ampla e desdobra o mesmo tom em exemplos de apresentação e elementos do sistema visual.</p>
+          <p class="section-copy">Da primeira dobra à atualização dos cases, estas telas mostram como a linguagem editorial organiza conteúdo, serviços e componentes.</p>
         </div>
         <div class="site-section-list">
           <article class="site-section-card">
@@ -90,17 +91,57 @@
             </div>
           </article>
           <article class="site-section-card reverse">
+            <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-positioning.png" alt="Seção de posicionamento da demonstração com fotografia de um cão e texto editorial" loading="lazy"></figure>
+            <div class="site-section-content">
+              <div class="site-section-heading"><span class="case-kicker">Posicionamento</span><div><span class="site-section-number">02</span><h3 class="serif">Fotografia e argumento constroem confiança juntos.</h3></div></div>
+              <p>A imagem de grande escala e o texto em serifas dão um tom humano à proposta. A hierarquia orienta a leitura sem deixar a fotografia virar apenas decoração.</p>
+              <div class="site-section-tags"><span>Fotografia</span><span>Mensagem</span><span>Respiro</span></div>
+            </div>
+          </article>
+          <article class="site-section-card">
+            <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-services.png" alt="Três blocos de serviço ilustrados com fotografias de animais na demonstração editorial" loading="lazy"></figure>
+            <div class="site-section-content">
+              <div class="site-section-heading"><span class="case-kicker">Blocos de serviço</span><div><span class="site-section-number">03</span><h3 class="serif">Uma grade explica o que o portfólio entrega.</h3></div></div>
+              <p>Estudo de caso, processo de entrega e resultados aparecem em três cartões com a mesma estrutura. A repetição facilita a comparação sem uniformizar as imagens.</p>
+              <div class="site-section-tags"><span>Serviços</span><span>Grade</span><span>Repetição</span></div>
+            </div>
+          </article>
+          <article class="site-section-card reverse">
+            <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-case-fields.png" alt="Ficha da demonstração com seis campos previstos para documentar cada case" loading="lazy"></figure>
+            <div class="site-section-content">
+              <div class="site-section-heading"><span class="case-kicker">Estrutura do conteúdo</span><div><span class="site-section-number">04</span><h3 class="serif">Cada novo case já tem uma ficha de informações.</h3></div></div>
+              <p>Nome e contexto, prints, contribuição, problema, solução e resultado formam um roteiro de publicação. O sistema não depende de improvisar a narrativa a cada projeto.</p>
+              <div class="site-section-tags"><span>Conteúdo</span><span>Template</span><span>Clareza</span></div>
+            </div>
+          </article>
+          <article class="site-section-card">
             <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-section-1.jpg" alt="Cards de case com fotografia e resumo do projeto" loading="lazy"></figure>
             <div class="site-section-content">
-              <div class="site-section-heading"><span class="case-kicker">Cases</span><div><span class="site-section-number">02</span><h3 class="serif">Fotografia e texto dividem o espaço de cada projeto.</h3></div></div>
+              <div class="site-section-heading"><span class="case-kicker">Cases</span><div><span class="site-section-number">05</span><h3 class="serif">Fotografia e texto dividem o espaço de cada projeto.</h3></div></div>
               <p>Os cards de exemplo combinam imagem, contexto e descrição breve para apresentar o trabalho sem depender apenas de um print.</p>
               <div class="site-section-tags"><span>Fotografia</span><span>Cards</span><span>Contexto</span></div>
             </div>
           </article>
+          <article class="site-section-card reverse">
+            <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-dark-panel.png" alt="Painel escuro da demonstração editorial sobre publicação em GitHub Pages" loading="lazy"></figure>
+            <div class="site-section-content">
+              <div class="site-section-heading"><span class="case-kicker">Contraste</span><div><span class="site-section-number">06</span><h3 class="serif">Um painel escuro marca a mudança de assunto.</h3></div></div>
+              <p>A página usa uma única ruptura de tom para destacar o tema da publicação estática. O bloco mantém as serifas e as bordas suaves, mas aumenta o contraste sem perder a unidade.</p>
+              <div class="site-section-tags"><span>Painel escuro</span><span>Hierarquia</span><span>Publicação</span></div>
+            </div>
+          </article>
           <article class="site-section-card">
+            <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-flow.png" alt="Fluxo de quatro etapas para coletar, narrar, publicar e atualizar projetos" loading="lazy"></figure>
+            <div class="site-section-content">
+              <div class="site-section-heading"><span class="case-kicker">Fluxo editorial</span><div><span class="site-section-number">07</span><h3 class="serif">A proposta prevê como o portfólio continua vivo.</h3></div></div>
+              <p>Coletar material, narrar a contribuição, publicar e atualizar formam um ciclo simples. Essa etapa conecta o visual à manutenção real dos futuros cases.</p>
+              <div class="site-section-tags"><span>Processo</span><span>Publicação</span><span>Evolução</span></div>
+            </div>
+          </article>
+          <article class="site-section-card reverse">
             <figure class="site-section-media"><img src="../assets/portfolio-pet-sitter-section-2.jpg" alt="Paleta neutra e componentes do estudo editorial" loading="lazy"></figure>
             <div class="site-section-content">
-              <div class="site-section-heading"><span class="case-kicker">Sistema visual</span><div><span class="site-section-number">03</span><h3 class="serif">Tons neutros mantêm a apresentação consistente.</h3></div></div>
+              <div class="site-section-heading"><span class="case-kicker">Sistema visual</span><div><span class="site-section-number">08</span><h3 class="serif">Tons neutros mantêm a apresentação consistente.</h3></div></div>
               <p>A paleta stone e os componentes de bordas suaves conectam títulos, imagens e conteúdo ao longo da demonstração.</p>
               <div class="site-section-tags"><span>Paleta</span><span>Componentes</span><span>Consistência</span></div>
             </div>
@@ -109,13 +150,71 @@
       </div>
     </section>
 
+    <section class="section ds-foundations-section" aria-labelledby="editorial-foundations-title">
+      <div class="container">
+        <div class="ds-section-head">
+          <span class="section-label">Fundamentos do design system</span>
+          <h2 class="section-title serif" id="editorial-foundations-title">A calma editorial é construída com regras precisas.</h2>
+          <p class="section-copy">Abaixo estão os tokens reais da demonstração. A cor organiza profundidade; a tipografia organiza o ritmo de leitura.</p>
+        </div>
+        <div class="ds-foundations-grid">
+          <article class="ds-panel">
+            <h3 class="serif">Paleta stone</h3>
+            <p>Superfícies próximas do branco, cinzas quentes e texto escuro criam distinção sem depender de cores chamativas.</p>
+            <div class="ds-swatch-grid" aria-label="Cores da paleta editorial">
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#fafaf9"></div><div class="ds-swatch-copy"><strong>Stone 50</strong><code>#fafaf9</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#f5f5f4"></div><div class="ds-swatch-copy"><strong>Stone 100</strong><code>#f5f5f4</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#e7e5e4"></div><div class="ds-swatch-copy"><strong>Stone 200</strong><code>#e7e5e4</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#d6d3d1"></div><div class="ds-swatch-copy"><strong>Stone 300</strong><code>#d6d3d1</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#78716c"></div><div class="ds-swatch-copy"><strong>Stone 500</strong><code>#78716c</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#292524"></div><div class="ds-swatch-copy"><strong>Stone 800</strong><code>#292524</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#1c1917"></div><div class="ds-swatch-copy"><strong>Stone 900</strong><code>#1c1917</code></div></div>
+              <div class="ds-swatch"><div class="ds-swatch-color" style="--swatch:#ffffff"></div><div class="ds-swatch-copy"><strong>Card</strong><code>#ffffff</code></div></div>
+            </div>
+          </article>
+          <article class="ds-panel">
+            <h3 class="serif">Tipografia em duas vozes</h3>
+            <p>Noto Serif JP dá presença aos títulos; Noto Sans JP sustenta navegação, descrições e dados dos cases.</p>
+            <div class="ds-type-specimen ds-type-specimen--editorial">
+              <p class="ds-type-label">Noto Serif JP · títulos</p>
+              <p class="ds-type-display">Cada projeto merece uma história.</p>
+              <p class="ds-type-body">Noto Sans JP · texto de apoio com entrelinha generosa, pensado para explicar decisões e resultados sem pressa.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white ds-components-section" aria-labelledby="editorial-components-title">
+      <div class="container">
+        <div class="ds-section-head">
+          <span class="section-label">Componentes em uso</span>
+          <h2 class="section-title serif" id="editorial-components-title">O mesmo vocabulário aparece do hero ao case.</h2>
+          <p class="section-copy">Este recorte reconstitui a combinação de título serifado, superfície suave, card de conteúdo e ações arredondadas da demonstração.</p>
+        </div>
+        <div class="ds-component-demo ds-component-demo--editorial" aria-label="Exemplo visual dos componentes editoriais">
+          <div class="ds-demo-art">
+            <div class="ds-demo-art-top"><span>MEIGAN.DEV</span><span>CASE / 01</span></div>
+            <h3>Design com espaço para respirar.</h3>
+            <div class="ds-demo-art-bottom">EDITORIAL · CLAREZA · CONFIANÇA</div>
+          </div>
+          <div class="ds-demo-copy">
+            <span class="ds-demo-kicker">Estudo de caso · exemplo</span>
+            <h3>Um projeto contado com contexto.</h3>
+            <p>Imagem, objetivo, intervenção e resultado ocupam lugares definidos. A interface apoia a leitura em vez de competir com ela.</p>
+            <div class="ds-demo-actions" aria-label="Exemplos visuais de ações"><span>Ver case</span><span>Conhecer processo</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section case-notes-section">
       <div class="container">
         <h2 class="project-section-title serif">Notas do case</h2>
         <div class="project-story-grid">
-          <article class="story-card"><h3>Problema</h3><p>Explorar uma forma de apresentar o portfólio com cuidado visual e leitura confortável, dando espaço aos projetos.</p></article>
-          <article class="story-card"><h3>Solução</h3><p>Combinar tipografia serifada, fotografias, paleta discreta e cards de case com contexto curto.</p></article>
-          <article class="story-card"><h3>Resultado</h3><p>Uma direção editorial navegável que serviu de base para a comparação com o estudo retrô e para a versão híbrida.</p></article>
+          <article class="story-card"><h3>Problema</h3><p>Dar a cada projeto espaço para explicar contexto e decisões sem transformar o portfólio em uma página pesada ou confusa.</p></article>
+          <article class="story-card"><h3>Solução</h3><p>Definir tokens stone, uma dupla tipográfica, cards reutilizáveis e uma ficha de case que combina imagem, texto e contribuição.</p></article>
+          <article class="story-card"><h3>Resultado</h3><p>Uma demonstração navegável com abertura, blocos de serviço, exemplos de cases, fluxo de atualização e biblioteca de tokens.</p></article>
         </div>
         <div class="project-closing">
           <div><h2 class="serif">A base editorial do trio.</h2><p>Veja o contraste com o estudo retrô ou abra a demonstração completa desta proposta.</p></div>
